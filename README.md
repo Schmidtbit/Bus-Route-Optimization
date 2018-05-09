@@ -37,7 +37,7 @@ I believe this approach will be successful because other cities have seen succes
 The class I am building may serve as a useful tool for Capital Metro and the City of Austin in planning future mobility.
 
 ## Format
-My class will be build in a python file and demonstrated in a JupyerNotebook.
+Python class stored in a python file and demonstrated in a JupyerNotebook.
 
 ## Data Sources
 Austin Texas 2010 Census TIGER/Line Shapefiles downloaded from the [Census Bureau](https://www.census.gov/geo/maps-data/data/tiger-line.html)
