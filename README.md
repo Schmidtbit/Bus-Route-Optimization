@@ -42,6 +42,3 @@ Austin Texas 2010 Census TIGER/Line Shapefiles downloaded from the [Census Burea
 * Use an a-star graph search and weigh the edges (or paths) by average traffic flow speed.
 * evaluate each region
 * Further enrich population data with jobs data
-
-## Video
-[Project Motivation and Progress](https://www.youtube.com/watch?v=HPuYPlqDluk&index=8&list=PLxtztEze-DRedrinVPfmde2jq9UKwxBzq)
