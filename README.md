@@ -1,7 +1,7 @@
-# Modeling Austin's Public Transit System
+# Bus Routing with Genetic Algorithms for the City of Austin
 
 ## Objective
-Build a __Genetic Algorithm__ modeling class that can be used to design optimized bus transit routes for Austin's public transportation system with the purpose of attracting more riders and relieving road congestion.
+Build a __Genetic Algorithm__ modeling class that can be used to optimize bus transit routes for Austin's public transportation system with the purpose of attracting more riders and relieving road congestion.
 
 ## Background
 City governments and researchers have been studying different ways to design efficient and useful transportation networks for over a century. Industry calls it the __Transit Network Design Problem__ and it aims to optimize across many objectives with a large potential solution space. Non-linear problems like this one have seen success using a Genetic Algorithm approach.
@@ -26,15 +26,10 @@ I also found this [Master Thesis](https://oatd.org/oatd/record?record=handle%5C%
 
 
 ## Approach
-My thesis is that the current bus route network is not convenient or useful enough for a large portion of the population. My strategy is to design a layered system, one that links population regions together with rapid connections that is layered on top of many regional networks that exclusively serve one specific area.
-
-My goal is to minimize travel time and maximize network reach. To do so, I will initialize a new set of bus stops using block-level [population](http://connections2025.org/wp-content/uploads/2016/02/CapMetro_2010PopEmp.pdf "Population & Employment Density") data from the 2010 census. Then, I will define my regions, arbitrarily decide on a good location for the rapid network transit station, and pick the number of routes to be used in the area. Then I will implement a RouteFinder class, that uses a genetic algorithm to search for optimal routing, taking into account distance between nodes.  
+My thesis is that the current bus route network is not convenient or useful enough for a large portion of the population. My goal is to minimize travel time and maximize network reach. The first problem to solve is to answer the question "where do bus stops need to be located?" I will initialize a new set of bus stops using block-level [population](http://connections2025.org/wp-content/uploads/2016/02/CapMetro_2010PopEmp.pdf "Population & Employment Density") data from the 2010 census. I will use this to build a __weighted k-means algorithm__. Then, I will define the regions and choose a good location for each regions transfer terminal. Then, I will implement a RouteFinder class, that uses a genetic algorithm to search for optimal routing within a given region using distance between nodes for a fitness function.   
 
 I believe this approach will be successful because other cities have seen success with this method. I used the example from [Curitiba, Brazil](https://www.slideshare.net/TheMissionGroup/a-market-focused-paradigm-for-public-transit-pt-3-designing-effective-transit-networks) in designing this strategy, since they are known in the transportation industry as a model city on this topic. My theory is that making a fast and well interconnected network will encourage daily commuters to choose public transit over driving.
 
-
-## Impact
-The class I am building may serve as a useful tool for Capital Metro and the City of Austin in planning future mobility.
 
 ## Format
 Python class stored in a python file and demonstrated in a JupyerNotebook.
@@ -43,9 +38,9 @@ Python class stored in a python file and demonstrated in a JupyerNotebook.
 Austin Texas 2010 Census TIGER/Line Shapefiles downloaded from the [Census Bureau](https://www.census.gov/geo/maps-data/data/tiger-line.html)
 
 ## Next Steps
-* Re-Define the fitness function to take into account the multiple paths a vehicle can traverse to get from one node to the next.
+* Build the weighted-K-Means Algorithm
 * Use an a-star graph search and weigh the edges (or paths) by average traffic flow speed.
-* evaluate the full dataset on a remote server with a high number of random selections and evolutions
+* evaluate each region
 * Further enrich population data with jobs data
 
 ## Video
