@@ -14,7 +14,7 @@ def Download_Unzip_GEOs(state):
     url = 'https://www2.census.gov/geo/tiger/TIGER2017/TABBLOCK/' + 'tl_2017_{}_tabblock10.zip'.format(state)
     r = requests.get(url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
-    new_path = './data/blockGEOs_{}'.format(state)
+    new_path = 'LOCAL/blockGEOs_{}'.format(state)
     if not os.path.exists(new_path):
         os.makedirs(new_path)
     z.extractall(new_path)
